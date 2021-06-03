@@ -1,0 +1,80 @@
+O que é Git?
+- Sistema de controle de versões distribuído
+- Registra histórico de modificações em qualquer tipo de arquivo
+
+Quais problemas resolve?
+- Centralização de tudo em um único servidor (Sistema de controle de versão)
+
+Serviços populares:
+- Hospedagem online de repositórios
+- GitHub, GitLab, Bitbucket, Azure DevOps
+
+Repositório: guarda o histórico de todas as modificações do projeto; é o projeto em si
+Commit: é uma versão do projeto
+
+Passos:
+Abre o terminal Git Bash na pasta
+No GitHub vai em "Clone or download" e copia o link
+No terminal Git Bash:
+git clone "link do gitHub" - vai clonar o repositório
+git status: mostra o que foi modificado no repositório
+git add.: sobe a modificação para o GitHub; todos os arquivos
+git add "arquivo.extensao": sobe um determinado arquivo
+git commit -m "comentario sobre a alteração feita"
+git push
+git push origin master
+git push -u origin master
+
+se ao dar um git commit -m "comentario" aparecer:
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+deve-se fazer o seguinte:
+copiar a primeira linha e colocar no lugar de "you@example.com" o e-mail que foi cadastrado no gitHub > Enter
+copiar a segunda linha e colocar no lugar de "Your Name" o username que foi cadastrado no gitHub > Enter
+
+git fetch: compara o que está na máquina local com o que está no GitHub, mostrando se há diferença de quantidade de commit
+git pull: atualiza localmente, para ficar igual ao repositório
+ 
+
+----------------------------------------------
+
+Iniciando um repositório localmente:
+criar um repositório no gitHub sem o readme
+criar uma pasta local
+abrir o Git Bash no repositório local
+dar os seguintes comandos:
+git init
+git remote add origin "link do repositorio do gitHub"
+git status
+git add .
+git commit -m "comentário"
+git push
+git push -u origin master
+- O que está acontecendo é que eu estou criando um repositório local e vou soncronizar com o meu repositório do gitHub
+
+O que é um fork e como fazer um:
+Cópia do repositório para outra conta
+
+Criando branches:
+branches são criadas para criar ramificações
+branches podem ser criadas locanmente ou remotamente
+precisa fazer a sincronização
+git checkout -b minhaNovaBranch: cria a branch
+git checkout master
+git push origin minhaNovaBranch
+
+Apagando branches:
+git branch -d minhaNovaBranch: apaga localmente
+git push origin minhaNovaBranch --delete: apaga no servidor
+
+Trabalhando com versionamento - conceitos:
+commit - versão; pacote de modificações
+
+Merge
+junta uma banch com a outra, ou seja, vai unir as modificações; então os passo são:
+git checkout master: puxa as modificações
+git merge minhaNovaBranch: une as modificações
+
+Pull request:
+pedido de um merge entre o branches
+pedido de merge entre repositórios
